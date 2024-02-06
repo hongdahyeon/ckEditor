@@ -1,0 +1,93 @@
+<html lang="ko"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="headerFragment">
+    <div class="bg-dark">
+        hong shop
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<!--        <div class="container-fluid">-->
+<!--            <div class="dropdown">-->
+<!--                <button class="btn" type="button" id="mainPageBtn" >-->
+<!--                    <img src="/assets/src/header/home.png" alt="Button Image" style="width:50px;" class="rounded-pill">-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link" href="#" id="productDropdown" role="button" data-bs-toggle="dropdown"-->
+<!--                       aria-expanded="false" onclick="location.href='/category/new'">-->
+<!--                        상품 구경하기-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li class="nav-item dropdown">-->
+<!--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown"-->
+<!--                       aria-expanded="false">-->
+<!--                        게시판-->
+<!--                    </a>-->
+<!--                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2" id="post-dropdown"></ul>-->
+<!--                </li>-->
+<!--                <th:block sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_SUPER')">-->
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown"-->
+<!--                           aria-expanded="false">-->
+<!--                            기록관리-->
+<!--                        </a>-->
+<!--                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">-->
+<!--                            <li><a class="dropdown-item" href="/manager/fileDownload">파일 업로드/다운로드 기록</a></li>-->
+<!--                            <li><a class="dropdown-item" href="/manager/couponHist">쿠폰 사용 기록</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+
+<!--                    <li class="nav-item dropdown">-->
+<!--                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-bs-toggle="dropdown"-->
+<!--                           aria-expanded="false">-->
+<!--                            정보관리-->
+<!--                        </a>-->
+<!--                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">-->
+<!--                            <li><a class="dropdown-item" href="/manager/category">카테고리 및 상품 관리</a></li>-->
+<!--                            <li><a class="dropdown-item" href="/manager/order">주문 관리</a></li>-->
+<!--                            <li><a class="dropdown-item" href="/manager/deliver">배송 관리</a></li>-->
+<!--                            <li><a class="dropdown-item" href="/manager/user">사용자 관리</a></li>-->
+<!--                            <li><a class="dropdown-item" href="/manager/postType">게시판 관리</a></li>-->
+<!--                            <li><a class="dropdown-item" href="/manager/coupon">쿠폰 관리</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                </th:block>-->
+<!--            </ul>-->
+<!--            <div class="dropdown">-->
+<!--                <button class="btn" type="button" id="dropdownMenuButton-shop" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                    <img src="/assets/src/header/shop.png" alt="Button Image" style="width:50px; background-color: white" class="rounded-pill">-->
+<!--                </button>-->
+<!--                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton-shop">-->
+<!--                    <li><a class="dropdown-item" href="/user/cart">-->
+<!--                        <i data-feather="shopping-cart" class="font-medium-2 ms-50"></i>&nbsp;&nbsp;&nbsp; 장바구니</a>-->
+<!--                    </li>-->
+<!--                    <li><a class="dropdown-item" href="/user/order">-->
+<!--                        <i data-feather="inbox" class="font-medium-2 ms-50"></i>&nbsp;&nbsp;&nbsp; 주문 및 배송정보</a>-->
+<!--                    </li>-->
+<!--                    <li><a class="dropdown-item" href="/user/review">-->
+<!--                        <i data-feather="edit-2" class="font-medium-2 ms-50"></i>&nbsp;&nbsp;&nbsp; 나의 리뷰</a>-->
+<!--                    </li>-->
+<!--                    <li><a class="dropdown-item" href="/user/coupon">-->
+<!--                        <i data-feather="percent" class="font-medium-2 ms-50"></i>&nbsp;&nbsp;&nbsp; 나의 쿠폰</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                <button class="btn" type="button" id="dropdownMenuButton-info" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--                    <img src="/assets/src/header/profile.png" alt="Button Image" style="width:50px;" class="rounded-pill">-->
+<!--                </button>-->
+<!--                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton-info">-->
+<!--                    <li><a class="dropdown-item" href="#" onclick="logout()">-->
+<!--                        <i data-feather="log-out" class="font-medium-2 ms-50"></i>&nbsp;&nbsp;&nbsp; 로그아웃</a>-->
+<!--                    </li>-->
+<!--                    <li><a class="dropdown-item" href="/user/myInfo">-->
+<!--                        <i data-feather="info" class="font-medium-2 ms-50"></i>&nbsp;&nbsp;&nbsp; 나의 정보</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                <button class="btn" type="button" id="talkButton" onclick="talkButton()" data-toggle="tooltip" data-placement="top" title="질문 톡톡">-->
+<!--                    <img src="/assets/src/header/talk.png" alt="Button Image" style="width:50px;" class="rounded-pill">-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+    </nav>
+</th:block>
+</html>
