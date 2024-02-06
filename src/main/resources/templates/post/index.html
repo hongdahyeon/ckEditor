@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/default}">
+
+<th:block layout:fragment="content">
+    <div class="mt-3">
+        <div class="card-header" style="margin-bottom: 10px">
+            <div class="card-text d-flex justify-content-between">
+                <div class="text-start">
+                    <h3>CK-EDITOR</h3>
+                </div>
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-secondary" id="main-btn">메인화면이동</button>
+                    <button type="button" class="btn btn-outline-info" id="new-btn">글작성하기</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div id="ckEditor-table"></div>
+        </div>
+    </div>
+</th:block>
+
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+        const table = new Table("ckEditor-table")
+        table
+            .get(`/api/post`)
+            .add(new Column("index").title("#").width("15%").center())
+            .add(new Column("title").title("제목").width("30%").left())
+            .init()
+
+        table.rowClick((data, row) => window.location.href = `/post/view/${data['id']}`)
+        $("#new-btn").on('click', () => window.location.href = '/post/new')
+        $("#main-btn").on('click', () => window.location.href = '/')
+    </script>
+</th:block>

@@ -1,14 +1,12 @@
 class MyUploadAdapter {
 
     constructor(loader) {
-        // CKEditor 5's FileLoader instance.
         this.loader = loader;
 
-        // URL where to send files.
+        // URL
         this.url = "/api/uploadCKImageFile";
     }
 
-    // Starts the upload process.
     upload() {
         return this.loader.file.then(
             (file) =>
@@ -19,14 +17,12 @@ class MyUploadAdapter {
         );
     }
 
-    // Aborts the upload process.
     abort() {
         if (this.controller) {
             this.controller.abort();
         }
     }
 
-    // Initializes fetch listeners.
     _initListeners(resolve, reject, file) {
         const loader = this.loader;
         const genericErrorText = `Couldn't upload file: ${loader.file.name}.`;
@@ -63,8 +59,6 @@ class MyUploadAdapter {
                             json && json.error ? json.error.message : genericErrorText
                         );
                     }
-                    // If the upload is successful, resolve the upload promise with an object containing
-                    // at least the "default" URL, pointing to the image on the server.
                     resolve({
                         default: json.url,
                     });
@@ -85,7 +79,6 @@ class MyUploadAdapter {
             });
     }
 
-    // Prepares the data and sends the request.
     _sendRequest(file) {
     }
 }
