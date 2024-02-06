@@ -24,14 +24,23 @@
 
 <th:block layout:fragment="script">
     <script th:inline="javascript">
-        const table = new Table("ckEditor-table")
-        table
-            .get(`/api/post`)
-            .add(new Column("index").title("#").width("15%").center())
-            .add(new Column("title").title("제목").width("30%").left())
-            .init()
 
-        table.rowClick((data, row) => window.location.href = `/post/view/${data['id']}`)
+        const list = /*[[${list}]]*/ []
+
+        const table = new Tabulator("#ckEditor-table", {
+            data: list,
+            layout: "fitDataFill",
+            columnDefaults: { resizable: false },
+            columns: [
+                { title: "#", field: "id", headerSort:false, width: '15%', hozAlign: 'center', headerHozAlign: 'center' },
+                { title: "제목", field: "title", headerSort: false , width: '30%', hozAlign: 'left', headerHozAlign: 'left' }
+            ]
+        });
+
+        table.on('rowClick', function(e, row) {
+            const rowData = row.getData()
+            window.location.href = `/post/view/${rowData['id']}`
+        })
         $("#new-btn").on('click', () => window.location.href = '/post/new')
         $("#main-btn").on('click', () => window.location.href = '/')
     </script>

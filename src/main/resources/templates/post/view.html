@@ -55,7 +55,6 @@
         Util.confirm("삭제 하시겠습니까?").then((isOk) => {
           if(isOk) {
             Http.delete(`/api/post/${post['id']}`).then((res) => {
-              console.log("res", res)
               if (res['httpStatus'] === 200) Util.alert(res.message).then(() => window.location.href = `/post/list`)
             })
           }

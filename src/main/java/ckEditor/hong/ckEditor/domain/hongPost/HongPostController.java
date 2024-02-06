@@ -15,7 +15,8 @@ public class HongPostController {
     private final HongPostService service;
 
     @GetMapping("/list")
-    public String list() {
+    public String list(Model model) {
+        model.addAttribute("list", service.list());
         return "/post/index";
     }
 

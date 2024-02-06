@@ -54,7 +54,7 @@
     $(document).ready(function(){
       $("#list-btn").on("click", function(e){
         Util.confirm(`작성 정보가 저장되지 않을수도 있습니다. <br /> 목록으로 돌아가시겠습니까?`).then((isOk) => {
-          if(isOk) window.location.href = `/bbs/${type['postTypeId']}`
+          if(isOk) window.location.href = `/post/list`
         })
       })
 
